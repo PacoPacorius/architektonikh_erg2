@@ -114,7 +114,21 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 
 ### Βήμα 2ο
 
-Αρχικά, θέτουμε όλες τις caches στις μέγιστες δυνατές χωρητικότητές τους, καθώς γνωρίζουμε ότι θα έχουμε το μέγιστο performance έτσι. Έπειτα μεταβάλλουμε το associativity και το cache line size της L2 και συγκρίνουμε τα cpi του κάθε benchmark. Το σκεπτικό είναι ότι η τιμή με το καλύτερο cpi θα είναι η βέλτιστη τιμή για την L2 cache και θα επαναλάβουμε την ίδια διαδικασία για L1i και L1d
+Αρχικά, θέτουμε όλες τις caches στις μέγιστες δυνατές χωρητικότητές τους, καθώς γνωρίζουμε ότι θα έχουμε το μέγιστο performance έτσι. Έπειτα μεταβάλλουμε το associativity και το cache line size της L2 και συγκρίνουμε τα cpi του κάθε benchmark. Το σκεπτικό είναι ότι η τιμή με το καλύτερο cpi θα είναι η βέλτιστη τιμή για την L2 cache και θα επαναλάβουμε την ίδια διαδικασία για L1i και L1d.
+
+![specbzip](charts/specbzip_l2assoc.png)
+![spechmmer](charts/spechmmer_l2assoc.png)
+![specmcf](charts/specmcf_l2assoc.png)
+![specsjeng](charts/specsjeng_l2assoc.png)
+![speclibm](charts/speclimb_l2assoc.png)
+
+(ως cache line size χρησιμοποιήσαμε το default)
+
+Το CPI μειώνεται στην αρχή όταν αυξάνουμε το association και μετά ξανά ανεβαίνει.
+Αυτό γίναιται επιδή με association μεγαλύτερο του 1 δεν διαγράφονται τυχόν χρίσημα δεδομένα απο την cache αρά μιώνονται τα cache misses.
+Ο λόγος που μετα αυξάνει είναι ότι ανεβαίνει ο χρόνος αναζήτησης της σωστής λέξης.
+
+Παρατηρούμε ότι για associativity = 2 έχουμε το καλύτερο performance σε όλα τα benchmarks (περιέργως στο spechmmer δεν έχει σημασία τι associativity χρησιμοποιούμε). Κρατάμε την τιμή αυτή σταθερή και προχωράμε στο cache line size της L2.
 
 ![specbzip](charts/specbzip_cache_line.png)
 ![spechmmer](charts/spechmmer_cache_line.png)
@@ -123,13 +137,3 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 ![speclibm](charts/speclibm_cache_line.png)
 
 Στα benchmarks με καλή τοπικότητα, το μεγάλο cache line size βελτιώνει το performance του προγράμματος, ενώ σε προγράμματα με κακή τοπικότητα το χειροτερεύει, καθώς πρέπει να γράφει μεγαλύτερα blocks μνήμης από την RAM στις caches.
-
-![specbzip](charts/specbzip_l2assoc.png)
-![spechmmer](charts/spechmmer_l2assoc.png)
-![specmcf](charts/specmcf_l2assoc.png)
-![specsjeng](charts/specsjeng_l2assoc.png)
-![speclibm](charts/speclimb_l2assoc.png)
-
-Το CPI μειώνεται στην αρχή όταν αυξάνουμε το association και μετά ξανά ανεβαίνει.
-Αυτό γίναιται επιδή με association μεγαλύτερο του 1 δεν διαγράφονται τυχόν χρίσημα δεδομένα απο την cache αρά μιώνονται τα cache misses.
-Ο λόγος που μετα αυξάνει είναι ότι ανεβαίνει ο χρόνος αναζήτησης της σωστής λέξης.
