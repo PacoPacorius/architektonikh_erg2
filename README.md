@@ -122,7 +122,7 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 ![specsjeng](charts/specsjeng_l2assoc.png)
 ![speclibm](charts/speclimb_l2assoc.png)
 
-(ως cache line size χρησιμοποιήσαμε το default)
+(cache line size = 64)
 
 Το CPI μειώνεται στην αρχή όταν αυξάνουμε το association και μετά ξανά ανεβαίνει.
 Αυτό γίναιται επιδή με association μεγαλύτερο του 1 δεν διαγράφονται τυχόν χρίσημα δεδομένα απο την cache αρά μιώνονται τα cache misses.
