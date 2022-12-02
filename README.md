@@ -114,7 +114,7 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 
 ### Βήμα 2ο
 
-Αρχικά, θέτουμε όλες τις caches στις μέγιστες δυνατές χωρητικότητές τους, καθώς γνωρίζουμε ότι θα έχουμε το μέγιστο performance έτσι. Έπειτα μεταβάλλουμε το associativity και το cache line size της L2 και συγκρίνουμε τα cpi του κάθε benchmark.
+Αρχικά, θέτουμε όλες τις caches στις μέγιστες δυνατές χωρητικότητές τους, καθώς γνωρίζουμε ότι θα έχουμε το μέγιστο performance έτσι. Έπειτα μεταβάλλουμε το associativity και το cache line size της L2 και συγκρίνουμε τα cpi του κάθε benchmark. Το σκεπτικό είναι ότι η τιμή με το καλύτερο cpi θα είναι η βέλτιστη τιμή για την L2 cache και θα επαναλάβουμε την ίδια διαδικασία για L1i και L1d
 
 ![specbzip](charts/specbzip_cache_line.png)
 ![spechmmer](charts/spechmmer_cache_line.png)
