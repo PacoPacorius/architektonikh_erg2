@@ -1,0 +1,6 @@
+Benchmarks	system.cpu.cpi	system.cpu.dcache.overallMissRate::total	system.cpu.icache.overallMissRate::total	system.l2.overallMissRate::total
+cachelinespeclibm32	    5.159710	0.123459	0.000072	0.999993
+cachelinespeclibm64	    3.246084	0.061731	0.000088	0.999981
+cachelinespeclibm128	2.414122	0.030867	0.000096	0.999927
+cachelinespeclibm256	1.856016	0.015434	0.000114	0.999773
+cachelinespeclibm512	1.626793	0.007718	0.000113	0.999421
