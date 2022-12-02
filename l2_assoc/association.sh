@@ -14,5 +14,5 @@ options="--cpu-type=MinorCPU --caches --l2cache --l2_size 4MB"
 
 for assosiation in 1 2 4 8
 do
-    echo ${gem5}/build/ARM/gem5.opt -d ${benchmark}/assoc${assosiation} ${gem5}/configs/example/se.py ${options} --${testVariable} ${assosiation} -c ${command} -I 100000000 &
+    ${gem5}/build/ARM/gem5.opt -d ${benchmark}/assoc${assosiation} ${gem5}/configs/example/se.py ${options} --${testVariable} ${assosiation} -c ${command} -I 100000000 &
 done
