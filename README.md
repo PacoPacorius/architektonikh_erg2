@@ -128,4 +128,4 @@ Dummy text
 ![spechmmer](charts/spechmmer_l2assoc.png)
 ![specmcf](charts/specmcf_l2assoc.png)
 ![specsjeng](charts/specsjeng_l2assoc.png)
-![speclibm](charts/speclibm_l2assoc.png)
+![speclibm](charts/speclimb_l2assoc.png)
