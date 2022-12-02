@@ -122,9 +122,7 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 ![specsjeng](charts/specsjeng_cache_line.png)
 ![speclibm](charts/speclibm_cache_line.png)
 
-Το CPI μειώνεται στην αρχή όταν αυξάνουμε το association και μετά ξανά ανεβαίνει.
-Αυτό γίναιται επιδή με association μεγαλύτερο του 1 δεν διαγράφονται τυχόν χρίσημα δεδομένα απο την cache αρά μιώνονται τα cache misses.
-Ο λόγος που μετα αυξάνει είναι ότι ανεβαίνει ο χρόνος αναζήτησης της σωστής λέξης.
+Στα benchmarks με καλή τοπικότητα, το μεγάλο cache line size βελτιώνει το performance του προγράμματος, ενώ σε προγράμματα με κακή τοπικότητα το χειροτερεύει, καθώς πρέπει να γράφει μεγαλύτερα blocks μνήμης από την RAM στις caches.
 
 ![specbzip](charts/specbzip_l2assoc.png)
 ![spechmmer](charts/spechmmer_l2assoc.png)
@@ -132,4 +130,6 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 ![specsjeng](charts/specsjeng_l2assoc.png)
 ![speclibm](charts/speclimb_l2assoc.png)
 
-Στα benchmarks με καλή τοπικότητα, το μεγάλο cache line size βελτιώνει το performance του προγράμματος, ενώ σε προγράμματα με κακή τοπικότητα το χειροτερεύει, καθώς πρέπει να γράφει μεγαλύτερα blocks μνήμης από την RAM στις caches.
+Το CPI μειώνεται στην αρχή όταν αυξάνουμε το association και μετά ξανά ανεβαίνει.
+Αυτό γίναιται επιδή με association μεγαλύτερο του 1 δεν διαγράφονται τυχόν χρίσημα δεδομένα απο την cache αρά μιώνονται τα cache misses.
+Ο λόγος που μετα αυξάνει είναι ότι ανεβαίνει ο χρόνος αναζήτησης της σωστής λέξης.
