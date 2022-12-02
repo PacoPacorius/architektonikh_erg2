@@ -11,7 +11,7 @@ gem5="${HOME}/gem5"
 
 options="--cpu-type=MinorCPU --caches --l2cache --l2_size 4MB --l2_assoc 2 --l1d_size 128kB --l1i_size 128kB"
 
-for assosiation in 32 64 128 256 512
+for cache_line in 32 64 128 256 512
 do
-    ${gem5}/build/ARM/gem5.opt -d ${benchmark}/cache_line_size${assosiation} ${gem5}/configs/example/se.py ${options} --${testVariable} ${assosiation} -c ${command} -I 100000000 &
+    ${gem5}/build/ARM/gem5.opt -d ${benchmark}/cache_line_size${cache_line} ${gem5}/configs/example/se.py ${options} --${testVariable} ${assosiation} -c ${command} -I 100000000 &
 done
