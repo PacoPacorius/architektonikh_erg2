@@ -1,0 +1,30 @@
+Benchmarks	system.cpu.cpi	system.cpu.dcache.overallMissRate::total	system.cpu.icache.overallMissRate::total	system.l2.overallMissRate::total
+specbzip_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size128	6.068866	0.142635	0.000394	0.999959
+specbzip_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size256	8.656216	0.142574	0.000283	0.999954
+specbzip_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size32	5.454631	0.142904	0.000720	0.999980
+specbzip_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size512	10.869704	0.142549	0.000257	0.999944
+specbzip_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size64	5.453560	0.142735	0.000575	0.999975
+
+spechmmer_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size128	1.275792	0.000483	0.000063	0.162449
+spechmmer_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size256	1.271172	0.000270	0.000048	0.155537
+spechmmer_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size32	1.300636	0.001721	0.000104	0.164393
+spechmmer_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size512	1.270527	0.000199	0.000037	0.116858
+spechmmer_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size64	1.282763	0.000893	0.000086	0.165317
+
+speclibm_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size128	NAN	NAN	NAN	NAN
+speclibm_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size256	NAN	NAN	NAN	NAN
+speclibm_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size32	NAN	NAN	NAN	NAN
+speclibm_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size512	NAN	NAN	NAN	NAN
+speclibm_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size64	NAN	NAN	NAN	NAN
+
+specmcf_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size128	1.222832	0.002092	0.000023	0.703887
+specmcf_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size256	1.203164	0.001365	0.000022	0.517924
+specmcf_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size32	1.320644	0.004836	0.000031	0.903712
+specmcf_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size512	1.181231	0.001146	0.000019	0.299619
+specmcf_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size64	1.241469	0.003219	0.000022	0.838024
+
+specsjeng_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size128	3.636012	0.242542	0.000594	0.475635
+specsjeng_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size256	6.197386	0.121723	0.000688	0.981745
+specsjeng_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size32	6.313562	0.392055	0.000785	0.699783
+specsjeng_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size512	4.754632	0.061573	0.000981	0.946718
+specsjeng_l2_4MB_l2_assoc_2_l1i_l1d_128kB/cache_line_size64	3.577697	0.243579	0.000644	0.611215

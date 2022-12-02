@@ -1,0 +1,20 @@
+Benchmarks	system.cpu.cpi	system.cpu.dcache.overallMissRate::total	system.cpu.icache.overallMissRate::total	system.l2.overallMissRate::total
+specbzip_l2_size_4MB/assoc1	4.885412	0.056913	0.000055	0.829957
+specbzip_l2_size_4MB/assoc2	4.854841	0.056911	0.000055	0.821754
+specbzip_l2_size_4MB/assoc4	4.849098	0.056910	0.000055	0.819844
+specbzip_l2_size_4MB/assoc8	4.850154	0.056910	0.000055	0.820058
+
+spechmmer_l2_4MB/assoc1	1.286843	0.001981	0.000172	0.071636
+spechmmer_l2_4MB/assoc2	1.286843	0.001981	0.000172	0.071636
+spechmmer_l2_4MB/assoc4	1.286843	0.001981	0.000172	0.071636
+spechmmer_l2_4MB/assoc8	1.286843	0.001981	0.000172	0.071636
+
+specmcf_l2_4MB/assoc1	1.356487	0.003409	0.014606	0.150931
+specmcf_l2_4MB/assoc2	1.355922	0.003409	0.014606	0.150294
+specmcf_l2_4MB/assoc4	1.356005	0.003409	0.014606	0.150222
+specmcf_l2_4MB/assoc8	1.356047	0.003409	0.014606	0.150318
+
+specsjeng_l2_4MB/assoc1	3.691162	0.244575	0.016752	0.065024
+specsjeng_l2_4MB/assoc2	3.690778	0.244575	0.016751	0.064570
+specsjeng_l2_4MB/assoc4	3.690742	0.244575	0.016751	0.064549
+specsjeng_l2_4MB/assoc8	3.690810	0.244575	0.016751	0.064553
