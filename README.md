@@ -129,3 +129,7 @@ Dummy text
 ![specmcf](charts/specmcf_l2assoc.png)
 ![specsjeng](charts/specsjeng_l2assoc.png)
 ![speclibm](charts/speclimb_l2assoc.png)
+
+Το CPI μειώνεται στην αρχή όταν αυξάνουμε το association και μετά ξανά ανεβαίνει.
+Αυτό γίναιται επιδή με association μεγαλύτερο του 1 δεν διαγράφονται τυχόν χρίσημα δεδομένα απο την cache αρά μιώνονται τα cache misses.
+Ο λόγος που μετα αυξάνει είναι ότι ανεβαίνει ο χρόνος αναζήτησης της σωστής λέξης.
