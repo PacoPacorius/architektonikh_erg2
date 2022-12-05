@@ -174,11 +174,11 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 
 * Simulations για L2 size:
 
-![charts/specbzip_l2_size.png](charts/specbzip_l2_size.png)
-![charts/spechmmer_l2_size.png](charts/spechmmer_l2_size.png)
-![charts/specmcf_l2_size.png](charts/specmcf_l2_size.png)
-![charts/specsjeng_l2_size.png](charts/specsjeng_l2_size.png)
-![charts/speclibm_l2_size.png](charts/speclibm_l2_size.png)
+![charts/specbzip_l2_size.png](charts/specbzip_l2_cache_size.png)
+![charts/spechmmer_l2_size.png](charts/spechmmer_l2_cache_size.png)
+![charts/specmcf_l2_size.png](charts/specmcf_l2_cache_size.png)
+![charts/specsjeng_l2_size.png](charts/specsjeng_l2_cache_size.png)
+![charts/speclibm_l2_size.png](charts/speclibm_l2_cache_size.png)
 
 
 Στον ακόλουθο πίνακα φαίνονται τα cpi με βάση ποιο benchmark εκτελέστηκε και τι μέγεθος L2 cache χρησιμοποιήθηκε.
