@@ -195,9 +195,92 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 | L2 size = 4MB   | 1.711569 | 1.284963  | 1.355892 | 3.690458  | 3.246084 |
 
 Βλέπουμε ότι όσο αυξάνει η cache μέχρι περίπου 256kB/512kB τα benchmarks specbzip και spechmmer βελτιώνονται σε cpi και μετά από εκείνο το κατώφλι το specbzip αρχίζει να σταθεροποιείται ενώ το cpi του βελτιώνεται ακόμα και το spechmmer σταθεροποιείται εντελώς. 
-Το cpi του specmcf μειώνεται περίπου με τον ίδιο ρυθμό όσο αυξάνουμε τη χωρητικότητα της cache. Ιδιαίτερο ενδιαφέρον έχει το speclibm. Την καλύτερη απόδοση την βλέπουμε για 32kB L2 cache με μια μικρή διαφορά (0.022 cpi καλύτερη από τη δεύτερη καλύτερη απόδοση, για L2 cache size = 4MB) για το οποίο δεν υπάρχει καθαρή εξήγηση. 
+Το cpi του specmcf μειώνεται περίπου με τον ίδιο ρυθμό όσο αυξάνουμε τη χωρητικότητα της cache. To specsjeng έχει μεγάλη βελτίωση όταν αυξήσουμε την L2 cache από 32kB σε 128kB, ενώ σε μεγαλύτερα μεγέθη υπάρχει μικρότερη βελτίωση. Ιδιαίτερο ενδιαφέρον έχει το speclibm. Την καλύτερη απόδοση την βλέπουμε για 32kB L2 cache με μια μικρή διαφορά (0.022 cpi καλύτερη από τη δεύτερη καλύτερη απόδοση, για L2 cache size = 4MB) για το οποίο δεν υπάρχει καθαρή εξήγηση. 
 Βλέποντας τα κατάλληλα stats.txt βλέπουμε ότι το L2 cache miss rate είναι το ίδιο για όλες τις τιμές (0.999979), άρα πιθανώς η L2 cache να μην επηρεάζει σχεδόν καθόλου το cpi του speclibm (τότε γιατί L2 size = 32kB 
 είναι γρηγορότερο από τα υπόλοιπα? Ίσως μικρότερη cache = καλύτερη τεχνολογία μνήμης?)
+
+
+* Simulations για L1d association:
+
+![charts/specbzip_l1d_assoc_assoc.png](charts/specbzip_l1d_assoc.png)
+![charts/spechmmer_l1d_assoc_assoc.png](charts/spechmmer_l1d_assoc.png)
+![charts/specmcf_l1d_assoc_assoc.png](charts/specmcf_l1d_assoc.png)
+![charts/specsjeng_l1d_assoc_assoc.png](charts/specsjeng_l1d_assoc.png)
+![charts/speclibm_l1d_assoc_assoc.png](charts/speclibm_l1d_assoc.png)
+
+
+Στον ακόλουθο πίνακα φαίνονται τα cpi με βάση ποιο benchmark εκτελέστηκε και τι L1d cache association χρησιμοποιήθηκε.
+|                        | specbzip | spechmmer | specmcf  | specsjeng | speclibm |
+| ---------------------- | -------- | --------- | -------  | --------- | -------- |
+| L1d association = 1    | 1.771794 | 1.313702  | 1.395648 | 3.698814  | 3.249787 |
+| L1d association = 2    | 1.747783 | 1.284963  | 1.363381 | 3.690893  | 3.249665 |
+| L1d association = 4    | 1.738533 | 1.284196  | 1.362738 | 3.687331  | 3.249665 |
+| L1d association = 8    | 1.731632 | 1.284159  | 1.362940 | 3.686568  | 3.249665 |
+| L1d association = 16   | 1.727921 | 1.284222  | 1.362839 | 3.686436  | 3.249665 |
+| L1d association = 32   | 1.722288 | 1.284267  | 1.363022 | 3.686427  | 3.249665 |
+| L1d association = 64   | 1.719330 | 1.284298  | 1.363069 | 3.686361  | 3.249665 |
+| L1d association = 128  | 1.717773 | 1.284309  | 1.363225 | 3.686369  | 3.249665 |
+
+
+* Simulations για L1d size:
+
+![charts/specbzip_l1d_size.png](charts/specbzip_l1d_size.png)
+![charts/spechmmer_l1d_size.png](charts/spechmmer_l1d_size.png)
+![charts/specmcf_l1d_size.png](charts/specmcf_l1d_size.png)
+![charts/specsjeng_l1d_size.png](charts/specsjeng_l1d_size.png)
+![charts/speclibm_l1d_size.png](charts/speclibm_l1d_size.png)
+
+|                        | specbzip | spechmmer | specmcf  | specsjeng | speclibm |
+| ---------------------- | -------- | --------- | -------  | --------- | -------- |
+| L1d size = 32kB  | 2.302183 | 1.358482  | 1.384959 | 3.870465  | 3.222650 |
+| L1d size = 64kB  | 2.236785 | 1.339581  | 1.384352 | 3.748503  | 3.252973 |
+| L1d size = 128kB | 2.152640 | 1.303462  | 1.381896 | 3.706021  | 3.253288 |
+| L1d size = 256kB | 2.015374 | 1.285506  | 1.375519 | 3.694426  | 3.252796 |
+| L1d size = 512kB | 1.881470 | 1.284963  | 1.373081 | 3.690907  | 3.252315 |
+| L1d size = 1MB   | 1.802197 | 1.284963  | 1.368920 | 3.690840  | 3.251421 |
+| L1d size = 2MB   | 1.747783 | 1.284963  | 1.363381 | 3.690893  | 3.249665 |
+| L1d size = 4MB   | 1.711569 | 1.284963  | 1.355892 | 3.690458  | 3.246084 |
+
+
+* Simulations για L1i association:
+
+![charts/specbzip_l1i_assoc_assoc.png](charts/specbzip_l1i_assoc.png)
+![charts/spechmmer_l1i_assoc_assoc.png](charts/spechmmer_l1i_assoc.png)
+![charts/specmcf_l1i_assoc_assoc.png](charts/specmcf_l1i_assoc.png)
+![charts/specsjeng_l1i_assoc_assoc.png](charts/specsjeng_l1i_assoc.png)
+![charts/speclibm_l1i_assoc_assoc.png](charts/speclibm_l1i_assoc.png)
+
+|                        | specbzip | spechmmer | specmcf  | specsjeng | speclibm |
+| ---------------------- | -------- | --------- | -------  | --------- | -------- |
+| L1i association = 32kB | 2.302183 | 1.358482  | 1.384959 | 3.870465  | 3.222650 |
+| L1i association = 64kB | 2.236785 | 1.339581  | 1.384352 | 3.748503  | 3.252973 |
+| L1i association = 128kB| 2.152640 | 1.303462  | 1.381896 | 3.706021  | 3.253288 |
+| L1i association = 256kB| 2.015374 | 1.285506  | 1.375519 | 3.694426  | 3.252796 |
+| L1i association = 512kB| 1.881470 | 1.284963  | 1.373081 | 3.690907  | 3.252315 |
+| L1i association = 1MB  | 1.802197 | 1.284963  | 1.368920 | 3.690840  | 3.251421 |
+| L1i association = 2MB  | 1.747783 | 1.284963  | 1.363381 | 3.690893  | 3.249665 |
+| L1i association = 4MB  | 1.711569 | 1.284963  | 1.355892 | 3.690458  | 3.246084 |
+
+
+* Simulations για L1i size:
+
+![charts/specbzip_l1i_size.png](charts/specbzip_l1i_size.png)
+![charts/spechmmer_l1i_size.png](charts/spechmmer_l1i_size.png)
+![charts/specmcf_l1i_size.png](charts/specmcf_l1i_size.png)
+![charts/specsjeng_l1i_size.png](charts/specsjeng_l1i_size.png)
+![charts/speclibm_l1i_size.png](charts/speclibm_l1i_size.png)
+
+|                        | specbzip | spechmmer | specmcf  | specsjeng | speclibm |
+| ---------------------- | -------- | --------- | -------  | --------- | -------- |
+| L1i size = 32kB  | 2.302183 | 1.358482  | 1.384959 | 3.870465  | 3.222650 |
+| L1i size = 64kB  | 2.236785 | 1.339581  | 1.384352 | 3.748503  | 3.252973 |
+| L1i size = 128kB | 2.152640 | 1.303462  | 1.381896 | 3.706021  | 3.253288 |
+| L1i size = 256kB | 2.015374 | 1.285506  | 1.375519 | 3.694426  | 3.252796 |
+| L1i size = 512kB | 1.881470 | 1.284963  | 1.373081 | 3.690907  | 3.252315 |
+| L1i size = 1MB   | 1.802197 | 1.284963  | 1.368920 | 3.690840  | 3.251421 |
+| L1i size = 2MB   | 1.747783 | 1.284963  | 1.363381 | 3.690893  | 3.249665 |
+| L1i size = 4MB   | 1.711569 | 1.284963  | 1.355892 | 3.690458  | 3.246084 |
+
 
 ### Βήμα 3ο
 
