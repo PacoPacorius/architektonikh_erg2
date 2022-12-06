@@ -306,7 +306,6 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 
 
  * Simulation 1:   
-
   `Cache Line Size = 128`  
   `L2 associativity = 1`  
   `L2 size = 32kB`  
@@ -316,7 +315,6 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
   `L1i size = 32kB`
 
  * Simulation 2:   
-
   `Cache Line Size = 128`  
   `L2 associativity = 1`  
   `L2 size = 256kB`  
@@ -326,7 +324,6 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
   `L1i size = 32kB`  
 
  * Simulation 3:   
-
   `Cache Line Size = 128`  
   `L2 associativity = 1`  
   `L2 size = 32kB`  
