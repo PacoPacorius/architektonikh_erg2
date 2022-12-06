@@ -1,0 +1,25 @@
+Benchmarks	system.cpu.cpi	system.cpu.dcache.overallMissRate::total	system.cpu.icache.overallMissRate::total	system.l2.overallMissRate::total
+spec_results_step_2/specbzip/best_run/2256kB	2.099995	0.023824	0.000047	0.297393
+spec_results_step_2/specbzip/best_run/232kB	    2.873898	0.023787	0.000047	0.717156
+spec_results_step_2/specbzip/best_run/4256kB	2.100150	0.023824	0.000046	0.297404
+spec_results_step_2/specbzip/best_run/432kB	    2.873275	0.023786	0.000046	0.717163
+
+spec_results_step_2/spechmmer/best_run/2256kB	1.285993	0.001596	0.000080	0.096643
+spec_results_step_2/spechmmer/best_run/232kB	1.345467	0.002123	0.000080	0.737220
+spec_results_step_2/spechmmer/best_run/4256kB	1.285903	0.001596	0.000069	0.096393
+spec_results_step_2/spechmmer/best_run/432kB	1.345312	0.002123	0.000069	0.738045
+
+spec_results_step_2/speclibm/best_run/2256kB	2.421434	0.030869	0.000090	0.999849
+spec_results_step_2/speclibm/best_run/232kB	    2.318032	0.030869	0.000090	0.999901
+spec_results_step_2/speclibm/best_run/4256kB	2.421392	0.030869	0.000087	0.999870
+spec_results_step_2/speclibm/best_run/432kB	    2.318032	0.030869	0.000088	0.999915
+
+spec_results_step_2/specmcf/best_run/2256kB	    1.437419	0.018101	0.013625	0.060878
+spec_results_step_2/specmcf/best_run/232kB	    1.502910	0.018110	0.013626	0.106499
+spec_results_step_2/specmcf/best_run/4256kB	    1.345440	0.018101	0.000015	0.103314
+spec_results_step_2/specmcf/best_run/432kB	    1.408589	0.018110	0.000015	0.178324
+
+spec_results_step_2/specsjeng/best_run/2256kB	3.798394	0.256955	0.004718	0.098868
+spec_results_step_2/specsjeng/best_run/232kB	4.047122	0.256991	0.004711	0.382614
+spec_results_step_2/specsjeng/best_run/4256kB	3.775686	0.256961	0.002315	0.100993
+spec_results_step_2/specsjeng/best_run/432kB	3.998215	0.256997	0.002309	0.392772
