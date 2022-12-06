@@ -1,7 +1,0 @@
-Benchmarks	system.cpu.cpi	system.cpu.dcache.overallMissRate::total	system.cpu.icache.overallMissRate::total	system.l2.overallMissRate::total
-speclibm_max_cache	                    3.643383	0.123459	0.000072	0.999993
-speclibm_max_cache_less_cacheline_size	3.643383	0.123459	0.000072	0.999993
-speclibm_max_cache_more_cacheline_size	1.865714	0.030867	0.000096	0.999930
-speclibm_max_cache_less_associativity	2.469401	0.062026	0.000101	0.993194
-speclibm_max_cache_more_associativity	2.467162	0.061731	0.000086	0.999994
-speclibm_max_cache_more_ld	            2.467162	0.061731	0.000088	0.999981
