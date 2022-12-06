@@ -356,6 +356,53 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 | L1i assoc = 4 && L2 size = 256kB  | 2.100150 | 1.285903  | 1.345440 | 3.775686  | 2.421392 |
 
 
+Αν θέλουμε να βρούμε μια προσέγγιση των καλύτερων παραμέτρων για κάθε benchmark μπορούμε να πάρουμε τις παραμέτρους που μας δίναν το καλύτερο CPI από τις προσομοιώσεις για κάθε παράμετρο ξεχωριστά.
+
+specbzip CPI: 1.595365
+- `L1 instruction cache size`: 64kB
+- `L1 instruction cache associativity`: 4
+- `L1 data cache size`: 128kB
+- `L1 data cache associativity`: 128
+- `L2 cache size`: 4MB
+- `L2 cache associativity`: 16
+- `Μέγεθος cache line`: 256
+
+spechmmer CPI: 1.272208
+- `L1 instruction cache size`: 128kB
+- `L1 instruction cache associativity`: 8 
+- `L1 data cache size`: 128kB
+- `L1 data cache associativity`: 8
+- `L2 cache size`: 4MB
+- `L2 cache associativity`: 1
+- `Μέγεθος cache line`: 128
+
+specmcf CPI: 1.287062
+- `L1 instruction cache size`: 128kB
+- `L1 instruction cache associativity`: 4
+- `L1 data cache size`: 128kB
+- `L1 data cache associativity`: 4
+- `L2 cache size`: 4MB
+- `L2 cache associativity`: 128
+- `Μέγεθος cache line`: 32
+
+specsjeng CPI: 3.172561
+- `L1 instruction cache size`: 128kB
+- `L1 instruction cache associativity`: 16
+- `L1 data cache size`: 128kB
+- `L1 data cache associativity`: 64
+- `L2 cache size`: 4MB
+- `L2 cache associativity`: 128
+- `Μέγεθος cache line`: 64
+
+speclibm CPI: 1.445846
+- `L1 instruction cache size`: 128kB
+- `L1 instruction cache associativity`: 8
+- `L1 data cache size`: 128kB
+- `L1 data cache associativity`: 2
+- `L2 cache size`: 32kB
+- `L2 cache associativity`: 2
+- `Μέγεθος cache line`: 512
+
 ### Βήμα 3ο
 
 Με βάση τη διαφάνεια 1 (Memory Systems) βλέπουμε ότι τυπικά μεγέθη της L1 είναι 64kB και της L2 256kB. 256/64 = 4, άρα μπορούμε να υποθέσουμε ότι η L1 cache είναι 4 φορές ακριβότερη 
