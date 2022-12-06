@@ -306,40 +306,40 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 
 
  * Simulation 1: 
-  `Cache Line Size = 128`
-  `L2 associativity = 1`
-  `L2 size = 32kB`
-  `L1d associativity = 4`
-  `L1d size = 8kB`
-  `L1i associativity = 2`
+  `Cache Line Size = 128`  
+  `L2 associativity = 1`  
+  `L2 size = 32kB`  
+  `L1d associativity = 4`  
+  `L1d size = 8kB`  
+  `L1i associativity = 2`  
   `L1i size = 32kB`
 
  * Simulation 2: 
-  `Cache Line Size = 128`
-  `L2 associativity = 1`
-  `L2 size = 256kB`
-  `L1d associativity = 4`
-  `L1d size = 8kB`
-  `L1i associativity = 2`
-  `L1i size = 32kB`
+  `Cache Line Size = 128`  
+  `L2 associativity = 1`  
+  `L2 size = 256kB`  
+  `L1d associativity = 4`  
+  `L1d size = 8kB`  
+  `L1i associativity = 2`  
+  `L1i size = 32kB`  
 
  * Simulation 3: 
-  `Cache Line Size = 128`
-  `L2 associativity = 1`
-  `L2 size = 32kB`
-  `L1d associativity = 4`
-  `L1d size = 8kB`
-  `L1i associativity = 4`
-  `L1i size = 32kB`
-
- * Simulation 4: 
-  `Cache Line Size = 128`
-  `L2 associativity = 1`
-  `L2 size = 256kB`
-  `L1d associativity = 4`
-  `L1d size = 8kB`
-  `L1i associativity = 4`
-  `L1i size = 32kB`
+  `Cache Line Size = 128`  
+  `L2 associativity = 1`  
+  `L2 size = 32kB`  
+  `L1d associativity = 4`  
+  `L1d size = 8kB`  
+  `L1i associativity = 4`  
+  `L1i size = 32kB`  
+  
+ * Simulation 4:   
+  `Cache Line Size = 128`  
+  `L2 associativity = 1`  
+  `L2 size = 256kB`  
+  `L1d associativity = 4`  
+  `L1d size = 8kB`  
+  `L1i associativity = 4`  
+  `L1i size = 32kB`  
 
 ![charts/specbzip_best_run.png](charts/specbzip_best_run.png)
 ![charts/spechmmer_best_run.png](charts/spechmmer_best_run.png)
