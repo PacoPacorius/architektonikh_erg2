@@ -305,7 +305,8 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 Με παρόμοια λογική και στις υπόλοιπες παραμέτρους τρέχουμε τις παρακάτω προσομοιώσεις με τα εξής αποτελέσματα:
 
 
- * Simulation 1: 
+ * Simulation 1:   
+
   `Cache Line Size = 128`  
   `L2 associativity = 1`  
   `L2 size = 32kB`  
@@ -314,7 +315,8 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
   `L1i associativity = 2`  
   `L1i size = 32kB`
 
- * Simulation 2: 
+ * Simulation 2:   
+
   `Cache Line Size = 128`  
   `L2 associativity = 1`  
   `L2 size = 256kB`  
@@ -323,7 +325,8 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
   `L1i associativity = 2`  
   `L1i size = 32kB`  
 
- * Simulation 3: 
+ * Simulation 3:   
+
   `Cache Line Size = 128`  
   `L2 associativity = 1`  
   `L2 size = 32kB`  
@@ -377,5 +380,5 @@ f(L2_size, L1i_size, L1d_size, L2_assoc, L1i_assoc, L1d_assoc, Cache_Line_Size) 
 
 * Simulation 4 score: 20.5
 
-Βλέπουμε ότι όταν αυξάνουμε το l1i associativity αυξάνεται πολύ το κόστος για πολύ μικρή βελτίωση στην απόδοση του προγράμματος. Όταν αυξάνουμε το μέγεθος της L2 cache έχουμε καλύτερη βελτίωση 
+Βλέπουμε ότι όταν αυξάνουμε το L1i associativity αυξάνεται πολύ το κόστος για πολύ μικρή βελτίωση στην απόδοση του προγράμματος. Όταν αυξάνουμε το μέγεθος της L2 cache έχουμε καλύτερη βελτίωση 
 της απόδοσης και πολύ μικρή αύξηση του κόστους, οπότε θεωρούμε ότι ο καλύτερος συνδυασμός κόστους και απόδοσης είναι `l1i assoc = 2` και `l2 size = 256kB`.
