@@ -87,18 +87,22 @@ caches και σε άλλα εξαρτήματα εσωτερικά του επ�
 Εικάζουμε ότι ένας νέος επεξεργαστής θα είχε το default cpu clock, δηλαδή 2GHz, καθώς υπάρχει περίπτωση να υπάρχει στη ίδιο motherboard δύο επεξεργαστές με διαφορετικές συχνότητες (πχ smartphones).
 
 
-|     | 2GHz (default) | 1GHz | 3GHz |
-| --- | -------------  | ---- | ---- |
-| Specbzip simSeconds | 0.087389 | 0.165223 | 0.061595 |
-| Specmcf simSeconds | 0.68169 | 0.132593 | 0.046799 |
+|                      | 2GHz (default) | 1GHz | 3GHz |
+| -------------------- | -------------  | ---- | ---- |
+| Specbzip simSeconds  | 0.087389 | 0.165223 | 0.061595 |
+| Specmcf simSeconds   | 0.068169 | 0.132593 | 0.046799 |
 | Spechmmer simSeconds | 0.064248 | 0.128175 | 0.042898 |
 | Specsjeng simSeconds | 0.184545 | 0.329172 | 0.138285 |
-| Speclibm simSeconds | 0.162483 | 0.246976 | 0.135953 |
+| Speclibm simSeconds  | 0.162483 | 0.246976 | 0.135953 |
 
 
-` Specbzip 3GHz/1GHz -> 2.68, 3GHz/2GHz -> 
+`Specbzip 3GHz/1GHz -> 0.165223/0.061595 = 2.68, 3GHz/2GHz -> 0.087389/0.061595 = 1.42, 2GHz/1GHz -> 0.165223/0.087389 = 1.89`, άρα οι τιμές κάνουν περίπου scale, αλλά όχι ακριβώς
+`Specmcf 3GHz/1GHz -> 0.0132593/0.046799 = 2.83, 3GHz/2GHz -> 0.068169/0.042898 = 1.46, 2GHz/1GHz -> 0.132593/0.068169 =  1.94`. Οι τιμές είναι πολύ πιο κοντά στο να κάνουν τέλεια scale από specbzip, αλλά ακόμα δεν είναι τέλεια η αναλογία
+`Spechmmer 3GHz/1GHz -> 0.128175/0.042898 = 2.987, 3GHz/2GHz -> 1.497 , 2GHz/1GHz -> 1.995`. Σε αυτό το benchmark μπορούμε να πούμε ότι ο χρόνος εκτέλεσης κάνει τέλεια scale με το cpu clock
+`Specsjeng 3GHz/1GHz -> 0.329172/0.138285 = 2.38, 3GHz/2GHz -> 0.184545/0.138285 = 1.33, 2GHz/1GHz -> 0.329172/0.184545 = 1.78`. Οι τιμές έχουν αρχίσει να αποκλίνουν, δεν κάνει scale τόσο καλά αυτό το benchmark.
+`Speclibm 3GHz/1GHz -> 0.246976/0.135953 = 1.82, 3GHz/2GHz -> 0.162483/0.135953 = 1.19, 2GHz/1GHz -> 0.246976/0.162483 = 1.52`. Είναι προφανές ότι οι τιμές δεν κάνουν scale εδώ.
 
-Βλέπουμε ότι ενώ οι χρόνοι εκτέλεσης των τριών πρώτων benchmarks κάνουν scale, οι χρόνοι των specsjeng και speclibm όχι. Αυτό συμβαίνει διότι σε αυτά τα δύο benchmarks υπάρχουν πολλά
+Βλέπουμε ότι ενώ οι χρόνοι εκτέλεσης των δύο πρώτων benchmarks κάνουν scale περίπου, οι χρόνοι του spechmmer κάνουν scale τέλεια και οι χρόνοι των specsjeng και speclibm δεν κάνουν scale. Αυτό συμβαίνει διότι σε αυτά τα δύο benchmarks υπάρχουν πολλά
 cache misses ειδικά στην L2, άρα ο χρόνος του προγράμματος δεν επηρεάζεται τόσο από την ταχύτητα του επεξεργαστή.
 
 
@@ -210,16 +214,17 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 
 
 Στον ακόλουθο πίνακα φαίνονται τα cpi με βάση ποιο benchmark εκτελέστηκε και τι L1d cache associativity χρησιμοποιήθηκε.
+
 |                        | specbzip | spechmmer | specmcf  | specsjeng | speclibm |
 | ---------------------- | -------- | --------- | -------  | --------- | -------- |
-| L1d associativity = 1    | 1.771794 | 1.313702  | 1.395648 | 3.698814  | 3.249787 |
-| L1d associativity = 2    | 1.747783 | 1.284963  | 1.363381 | 3.690893  | 3.249665 |
-| L1d associativity = 4    | 1.738533 | 1.284196  | 1.362738 | 3.687331  | 3.249665 |
-| L1d associativity = 8    | 1.731632 | 1.284159  | 1.362940 | 3.686568  | 3.249665 |
-| L1d associativity = 16   | 1.727921 | 1.284222  | 1.362839 | 3.686436  | 3.249665 |
-| L1d associativity = 32   | 1.722288 | 1.284267  | 1.363022 | 3.686427  | 3.249665 |
-| L1d associativity = 64   | 1.719330 | 1.284298  | 1.363069 | 3.686361  | 3.249665 |
-| L1d associativity = 128  | 1.717773 | 1.284309  | 1.363225 | 3.686369  | 3.249665 |
+| L1d associativity = 1  | 1.771794 | 1.313702  | 1.395648 | 3.698814  | 3.249787 |
+| L1d associativity = 2  | 1.747783 | 1.284963  | 1.363381 | 3.690893  | 3.249665 |
+| L1d associativity = 4  | 1.738533 | 1.284196  | 1.362738 | 3.687331  | 3.249665 |
+| L1d associativity = 8  | 1.731632 | 1.284159  | 1.362940 | 3.686568  | 3.249665 |
+| L1d associativity = 16 | 1.727921 | 1.284222  | 1.362839 | 3.686436  | 3.249665 |
+| L1d associativity = 32 | 1.722288 | 1.284267  | 1.363022 | 3.686427  | 3.249665 |
+| L1d associativity = 64 | 1.719330 | 1.284298  | 1.363069 | 3.686361  | 3.249665 |
+| L1d associativity = 128| 1.717773 | 1.284309  | 1.363225 | 3.686369  | 3.249665 |
 
 
 Βλέπουμε ότι για όλα τα benchmarks υπάρχει βελτίωση αν αυξήσουμε το L1d associativity από 1 σε 2. Αν έπειτα το αυξήσουμε κι άλλο η απόδοση μένει σχετικά σταθερή για όλα τα benchmarks εκτός από τα specsjeng, η απόδοση του οποίου βελτιώνεται μέχρι να σταθεροποιηθεί μετά από association = 4, και το specbzip, του οποίου η απόδοση βελτιώνεται όσο και να αυξήσουμε το associativity.
@@ -289,6 +294,78 @@ cache misses ειδικά στην L2, άρα ο χρόνος του προγρ�
 
 Για specbzip και spechmmer έχουμε μεγάλη βελτίωση στην απόδοση όταν μεγαλώνουμε την χωρητικότητα της L1i από 2kB σε 4kB και βλέπουμε μικρές βελτιώσεις όσο μεγαλώνουμε περαιτέρω την L1i. Για το specmcf έχουμε την καλύτερη απόδοση για μέγεθος L1i 32kB μέχρι 128kB. 
 Όσο αυξάνουμε την L1i, το performance του specsjeng βελτιώνεται. Το speclibm ξανά δεν επηρεάζεται ιδιαίτερα από διαφορετικά μεγέθη L1i.
+
+
+* Simulations για βέλτιστη απόδοση
+
+Cache Line Size 
+256 1
+128 3
+64 1
+512 1
+
+L2 associativity 1
+
+L2 size
+4MB 1
+128KB 1
+256KB 3
+32KB 3
+
+
+L1d assoc
+2 4
+
+L1d size
+4kB 1
+8kB 3
+16kB 1
+
+L1i assoc
+2 3
+4 3
+
+L1i size
+4kB 1
+16kB 1
+32kB 2
+
+ * Simulation 1: 
+  `Cache Line Size = 128`
+  `L2 associativity = 1`
+  `L2 size = 32kB`
+  `L1d associativity = 4`
+  `L1d size = 8kB`
+  `L1i associativity = 2`
+  `L1i size = 32kB`
+
+ * Simulation 2: 
+  `Cache Line Size = 128`
+  `L2 associativity = 1`
+  `L2 size = 256kB`
+  `L1d associativity = 4`
+  `L1d size = 8kB`
+  `L1i associativity = 2`
+  `L1i size = 32kB`
+
+ * Simulation 3: 
+  `Cache Line Size = 128`
+  `L2 associativity = 1`
+  `L2 size = 32kB`
+  `L1d associativity = 4`
+  `L1d size = 8kB`
+  `L1i associativity = 4`
+  `L1i size = 32kB`
+
+ * Simulation 4: 
+  `Cache Line Size = 128`
+  `L2 associativity = 1`
+  `L2 size = 256kB`
+  `L1d associativity = 4`
+  `L1d size = 8kB`
+  `L1i associativity = 4`
+  `L1i size = 32kB`
+
 
 
 ### Βήμα 3ο
